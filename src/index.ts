@@ -116,7 +116,7 @@ function magicSquare(
 
 const arr: number[] = []
 
-console.log('All of the 3x3 Magic Numbers: ')
+console.log('All of the 3x3 Magic Squares: ')
 magicSquare(NUM_ARR, arr, 0)
 
 console.log('\nDone.')
