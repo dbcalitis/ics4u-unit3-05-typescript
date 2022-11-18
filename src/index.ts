@@ -23,7 +23,9 @@ const NUM_ARR = [1, 2, 3, 4, 5, 6, 7, 8, 9]
  * @returns {number[]} - the array of duplicate values.
  */
 function findDuplicates(arr: number[]): number[] {
-  const sortedArr = arr.slice().sort(function(a, b) { return a - b })
+  const sortedArr = arr.slice().sort(function (a, b) {
+    return a - b
+  })
 
   // (we use slice to clone the array so the
   // original array won't be modified)
@@ -64,16 +66,19 @@ ${arr[3]} ${arr[4]} ${arr[5]}\n${arr[6]} ${arr[7]} ${arr[8]}\n- - -`
 function isMagic(square: number[]): boolean {
   // Booleans
   const hasDuplicates = findDuplicates(square).length === 0
-  const rows = (square[0] + square[1] + square[2] === MAGIC_NUM &&
+  const rows =
+    square[0] + square[1] + square[2] === MAGIC_NUM &&
     square[3] + square[4] + square[5] === MAGIC_NUM &&
-    square[6] + square[7] + square[8] === MAGIC_NUM)
+    square[6] + square[7] + square[8] === MAGIC_NUM
 
-  const columns = (square[0] + square[3] + square[6] === MAGIC_NUM &&
+  const columns =
+    square[0] + square[3] + square[6] === MAGIC_NUM &&
     square[1] + square[4] + square[7] === MAGIC_NUM &&
-    square[2] + square[5] + square[8] === MAGIC_NUM)
+    square[2] + square[5] + square[8] === MAGIC_NUM
 
-  const diagonals = (square[0] + square[4] + square[8] === MAGIC_NUM &&
-    square[2] + square[4] + square[6] === MAGIC_NUM)
+  const diagonals =
+    square[0] + square[4] + square[8] === MAGIC_NUM &&
+    square[2] + square[4] + square[6] === MAGIC_NUM
 
   return rows && columns && diagonals && hasDuplicates
 }
@@ -89,7 +94,11 @@ function isMagic(square: number[]): boolean {
  * @param {number[]} currentSquare - the current square to be filled up.
  * @param {number} index - the index of the numbers list.
  */
-function magicSquare(nums: number[], currentSquare: number[], index: number): void {
+function magicSquare(
+  nums: number[],
+  currentSquare: number[],
+  index: number
+): void {
   // Checks if the square is filled and magic.
   if (index === 9 && isMagic(currentSquare)) {
     printSquare(currentSquare)
